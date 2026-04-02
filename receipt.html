@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>RECEIPT PAGE</title>
+    </head>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            font-family: cursive;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .border {
+            width: 500px;
+            height: 500px;
+            background-color: lavenderblush;
+            padding: 30px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(222, 93, 131, 0.2);
+            margin-bottom: 20px;
+        }
+        
+        .border::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .border::-webkit-scrollbar-track {
+            background: lavenderblush;
+            border-radius: 10px;
+        }
+        
+        .border::-webkit-scrollbar-thumb {
+            background: lavender;
+            border-radius: 10px;
+        }
+        
+        .back-button {
+            background-color: lavenderblush;
+            color: black;
+            padding: 10px 25px;
+            font-size: 16px;
+            font-family: cursive;
+            border: none;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(222, 93, 131, 0.2);
+        }
+        
+        .back-button:hover {
+            background-color: pink;
+            transform: scale(1.05);
+        }
+        
+        .back-button:active {
+            transform: scale(0.95);
+        }
+    </style>
+    
+    <body>
+        <h1>‧₊˚❀༉‧₊˚.RECEIPT‧₊˚❀༉‧₊˚.</h1>
+        <div class="border">
+            <!--write all the stuff here -->
+            <p> where the tasks are </p>
+        </div>
+        
+        <!-- Back Button -->
+        <button class="back-button" onclick="goBack()">←❀</button>
+        
+        <script>
+            function goBack() {
+                window.location.href = "main-page.html";
+            }
+        </script>
+    </body>
+</html>
+
+<!--this is a comment-->
