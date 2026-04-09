@@ -2,34 +2,54 @@
 
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>RECEIPT PAGE</title>
+
     </head>
     <style>
-        body {
+        *{
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            
+            background: url(https://i.postimg.cc/6pgBrsp3/Screenshot-2026-04-04-at-3-17-48-PM.png) no-repeat center center;
+            background-size: 100% 105%;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             background-color: white;
             font-family: cursive;
+            padding: 0;
+            margin: 0;
         }
         
         h1 {
             text-align: center;
-            margin-top: 20px;
+            z-index: 1;
+            margin-top: 0px;
             margin-bottom: 20px;
         }
         
         .border {
-            width: 500px;
-            height: 500px;
-            background-color: lavenderblush;
-            padding: 30px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            gap: 30px;
+            width: 35%;
+            height: 600px;
+            color: black;
+            max-width: 500px;
+            background-color: white;
+            padding: 2rem;
             overflow-y: auto;
-            overflow-x: hidden;
+            overflow-x: auto;
             border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(222, 93, 131, 0.2);
             margin-bottom: 20px;
         }
         
@@ -46,6 +66,10 @@
             background: lavender;
             border-radius: 10px;
         }
+
+        .task-list {
+
+        }
         
         .back-button {
             background-color: lavenderblush;
@@ -54,6 +78,7 @@
             font-size: 16px;
             font-family: cursive;
             border: none;
+            cursor: pointer;
             border-radius: 25px;
             margin-bottom: 30px;
             transition: all 0.3s ease;
@@ -68,24 +93,69 @@
         .back-button:active {
             transform: scale(0.95);
         }
+        
     </style>
-    
+
+   
     <body>
         <h1>‧₊˚❀༉‧₊˚.RECEIPT‧₊˚❀༉‧₊˚.</h1>
         <div class="border">
-            <!--write all the stuff here -->
+            <div class="dopamine-app">
+                <ul id="task-list"></ul>
+                <div class="empty-image"> ⟡𓌉◯𓇋₊˚⊹♡ </div>
+                <!--write all the stuff here -->
+                <h2>STARTER</h2>
+                <p></p>
+                <h2>MAIN</h2>
+                <h2>DESSERT</h2>
+                <h2>SIDES</h2>
+                <p>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⠾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⡶⣶⣶⣯⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠒⣍⣿⣿⣿⣿⣯⣇⣿⣿⣿⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠂⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣇⠀⠠⠑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀  
+                    ⠀⠀⠀⠀⠀⠀⢀⡴⠒⠋⠇⠀⠀⠀⠀⠀⠀⠉⠉⠿⠿⠿⠉⠀⠀⠀⢡⠀⠰⠢⢄⡀⠀⠀⠀⠀⠀  
+                    ⠀⠀⠀⠀⠀⢀⣿⣄⡀⠸⠘⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⢸⡆⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⡌⣙⡿⠛⠀⣷⡧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠁⢶⣿⠟⡀⠀⠀⠀
+                    ⠀⠀⠀⠀⢠⢱⣿⡀⠀⠀⣿⣿⣷⣔⣢⣀⠀⠀⣀⣠⣀⣀⠀⠀⠀⣀⣤⣾⣿⠀⠀⣸⡆⠃⠀⠀⠀
+                    ⠀⠀⠀⠀⠘⠞⣿⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣟⣻⣯⣴⣾⣿⢧⢸⠀⠀⠀
+                    ⠀⠀⠀⠀⠗⠀⠉⠛⠿⠯⠛⠛⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠟⣿⣻⡽⠉⠘⡆⠀⠀
+                    ⠀⠀⢠⡎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠙⣛⣛⣛⣛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⡄⠀
+                    ⠀⢠⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀
+                    ⠀⡌⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡆
+                    ⢠⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘
+                    ⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠
+                    ⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠋
+                    ⠀⠘⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡔⡕⠁
+                    ⠀⠀⠀⠉⠢⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⡠⡂⠕⠉⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠈⠁⠒⠠⠤⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠠⠶⠑⠂⠁⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</p>
             <p> where the tasks are </p>
+            <li>somthing</li>
+            </div>   
         </div>
         
         <!-- Back Button -->
         <button class="back-button" onclick="goBack()">←❀</button>
         
         <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                <!-- not really sure what to put in here-->
+                const emptyImage = document.querySelector('.empty-image');
+                const toggleEmptyState = () => {
+                    emptyImage.style.display = taskList.children.length === 0 ? 'block' : 'none' ;
+                };
+            })
+
             function goBack() {
-                window.location.href = "main-page.html";
+                window.location.href = "create-menu.html";
             }
         </script>
     </body>
+
+    <script src="script.js"></script>
 </html>
 
 <!--this is a comment-->
