@@ -15,7 +15,6 @@
         }
 
         body {
-            
             background: url(https://i.postimg.cc/6pgBrsp3/Screenshot-2026-04-04-at-3-17-48-PM.png) no-repeat center center;
             background-size: 100% 105%;
             min-height: 100vh;
@@ -24,37 +23,58 @@
             align-items: center;
             background-color: white;
             font-family: cursive;
-            padding: 0;
+            padding: 20px;
             margin: 0;
+            justify-content: center;
         }
         
         h1 {
             text-align: center;
-            z-index: 1;
             margin-top: 0px;
             margin-bottom: 20px;
+            width: 37%;
+            max-width: 500px;
+            min-width: 250px;
+            font-size: clamp(1.2rem, 6vw, 2.2rem);
+            word-wrap: break-word;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px;}
+            .border { padding: 1rem; min-width: 200px; }
+            h1 { min-width: 200px; }
         }
         
+        .dopamine-app {
+            min-width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+            width: 200px;
+        }
+
         .border {
             display: flex;
             justify-content: flex-start;
             align-items: center;
             flex-direction: column;
             gap: 30px;
-            width: 35%;
+            width: 37%;
             height: 600px;
             color: black;
-            max-width: 500px;
-            background-color: white;
+            min-width: 290px;
+            background-color: transparent;
             padding: 2rem;
             overflow-y: auto;
             overflow-x: auto;
             border-radius: 20px;
             margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .border::-webkit-scrollbar {
             width: 8px;
+            height: 8px;
         }
         
         .border::-webkit-scrollbar-track {
@@ -142,11 +162,15 @@
         
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                <!-- not really sure what to put in here-->
+                // Fixed: Changed HTML comment to JavaScript comment
                 const emptyImage = document.querySelector('.empty-image');
+                const taskList = document.getElementById('task-list');
                 const toggleEmptyState = () => {
-                    emptyImage.style.display = taskList.children.length === 0 ? 'block' : 'none' ;
+                    if (taskList && emptyImage) {
+                        emptyImage.style.display = taskList.children.length === 0 ? 'block' : 'none';
+                    }
                 };
+                toggleEmptyState();
             })
 
             function goBack() {
