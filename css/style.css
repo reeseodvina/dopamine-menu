@@ -57,7 +57,7 @@ body {
 
 .say-hello {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -75%);
     font-size: 7vw;
@@ -71,7 +71,7 @@ body {
 
 .dopa {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -75%); 
     
@@ -97,11 +97,11 @@ body {
     background-color: var(--cont-color);
     border-radius: 40px;
     position: relative;
-    margin-top: 570px; 
+    margin-top: 400px; 
     margin-left: auto;
     margin-right: auto;
-    padding-top: 100px; 
-    padding-bottom: 50px;
+    padding-top: 90px; 
+    padding-bottom: 40px;
     padding-right:100px; 
     padding-left: 100px;
 }
