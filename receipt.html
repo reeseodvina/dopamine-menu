@@ -2,79 +2,39 @@
 
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>RECEIPT PAGE</title>
-
     </head>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            background: url(https://i.postimg.cc/6pgBrsp3/Screenshot-2026-04-04-at-3-17-48-PM.png) no-repeat center center;
-            background-size: 100% 105%;
+            margin: 0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             background-color: white;
             font-family: cursive;
-            padding: 20px;
-            margin: 0;
-            justify-content: center;
         }
         
         h1 {
             text-align: center;
-            margin-top: 0px;
+            margin-top: 20px;
             margin-bottom: 20px;
-            width: 37%;
-            max-width: 500px;
-            min-width: 250px;
-            font-size: clamp(1.2rem, 6vw, 2.2rem);
-            word-wrap: break-word;
-        }
-
-        @media (max-width: 600px) {
-            body { padding: 10px;}
-            .border { padding: 1rem; min-width: 200px; }
-            h1 { min-width: 200px; }
         }
         
-        .dopamine-app {
-            min-width: 100%;
-            padding-left: 10px;
-            padding-right: 10px;
-            width: 200px;
-        }
-
         .border {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            flex-direction: column;
-            gap: 30px;
-            width: 37%;
-            height: 600px;
-            color: black;
-            min-width: 290px;
-            background-color: transparent;
-            padding: 2rem;
+            width: 500px;
+            height: 500px;
+            background-color: lavenderblush;
+            padding: 30px;
             overflow-y: auto;
-            overflow-x: auto;
+            overflow-x: hidden;
             border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(222, 93, 131, 0.2);
             margin-bottom: 20px;
-            margin-left: auto;
-            margin-right: auto;
         }
         
         .border::-webkit-scrollbar {
             width: 8px;
-            height: 8px;
         }
         
         .border::-webkit-scrollbar-track {
@@ -86,10 +46,6 @@
             background: lavender;
             border-radius: 10px;
         }
-
-        .task-list {
-
-        }
         
         .back-button {
             background-color: lavenderblush;
@@ -98,7 +54,6 @@
             font-size: 16px;
             font-family: cursive;
             border: none;
-            cursor: pointer;
             border-radius: 25px;
             margin-bottom: 30px;
             transition: all 0.3s ease;
@@ -113,73 +68,24 @@
         .back-button:active {
             transform: scale(0.95);
         }
-        
     </style>
-
-   
+    
     <body>
         <h1>‧₊˚❀༉‧₊˚.RECEIPT‧₊˚❀༉‧₊˚.</h1>
         <div class="border">
-            <div class="dopamine-app">
-                <ul id="task-list"></ul>
-                <div class="empty-image"> ⟡𓌉◯𓇋₊˚⊹♡ </div>
-                <!--write all the stuff here -->
-                <h2>STARTER</h2>
-                <p></p>
-                <h2>MAIN</h2>
-                <h2>DESSERT</h2>
-                <h2>SIDES</h2>
-                <p>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⠾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⡶⣶⣶⣯⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
-                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠒⣍⣿⣿⣿⣿⣯⣇⣿⣿⣿⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠂⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣇⠀⠠⠑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀  
-                    ⠀⠀⠀⠀⠀⠀⢀⡴⠒⠋⠇⠀⠀⠀⠀⠀⠀⠉⠉⠿⠿⠿⠉⠀⠀⠀⢡⠀⠰⠢⢄⡀⠀⠀⠀⠀⠀  
-                    ⠀⠀⠀⠀⠀⢀⣿⣄⡀⠸⠘⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⢸⡆⠀⠀⠀⠀
-                    ⠀⠀⠀⠀⠀⡌⣙⡿⠛⠀⣷⡧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠁⢶⣿⠟⡀⠀⠀⠀
-                    ⠀⠀⠀⠀⢠⢱⣿⡀⠀⠀⣿⣿⣷⣔⣢⣀⠀⠀⣀⣠⣀⣀⠀⠀⠀⣀⣤⣾⣿⠀⠀⣸⡆⠃⠀⠀⠀
-                    ⠀⠀⠀⠀⠘⠞⣿⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣟⣻⣯⣴⣾⣿⢧⢸⠀⠀⠀
-                    ⠀⠀⠀⠀⠗⠀⠉⠛⠿⠯⠛⠛⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠟⣿⣻⡽⠉⠘⡆⠀⠀
-                    ⠀⠀⢠⡎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠙⣛⣛⣛⣛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⡄⠀
-                    ⠀⢠⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀
-                    ⠀⡌⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡆
-                    ⢠⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘
-                    ⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠
-                    ⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠋
-                    ⠀⠘⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡔⡕⠁
-                    ⠀⠀⠀⠉⠢⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⡠⡂⠕⠉⠀⠀
-                    ⠀⠀⠀⠀⠀⠀⠈⠁⠒⠠⠤⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠠⠶⠑⠂⠁⠀⠀⠀⠀⠀
-                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</p>
+            <!--write all the stuff here -->
             <p> where the tasks are </p>
-            <li>somthing</li>
-            </div>   
         </div>
         
         <!-- Back Button -->
         <button class="back-button" onclick="goBack()">←❀</button>
         
         <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                // Fixed: Changed HTML comment to JavaScript comment
-                const emptyImage = document.querySelector('.empty-image');
-                const taskList = document.getElementById('task-list');
-                const toggleEmptyState = () => {
-                    if (taskList && emptyImage) {
-                        emptyImage.style.display = taskList.children.length === 0 ? 'block' : 'none';
-                    }
-                };
-                toggleEmptyState();
-            })
-
             function goBack() {
-                window.location.href = "create-menu.html";
+                window.location.href = "main-page.html";
             }
         </script>
     </body>
-
-    <script src="script.js"></script>
 </html>
 
 <!--this is a comment-->
