@@ -1,3 +1,4 @@
+/* color scheme to pull from */
 :root {
     --bg-color: #FBF9EA; 
     --text-color: #6B8FBB; 
@@ -20,6 +21,7 @@ body {
     overflow-x: hidden;
 }
 
+/*sun logo*/ 
 
 .logo {
     font-weight: 700;
@@ -36,6 +38,7 @@ body {
 
 }
 
+/*hero section formatting and text slide animation */ 
 .hero {
     position: relative;
     height: calc(100vh - 100px);
@@ -55,6 +58,8 @@ body {
   }
 }
 
+/*say hello...*/
+
 .say-hello {
     position: absolute;
     top: 40%;
@@ -69,6 +74,7 @@ body {
     pointer-events: none;
 }
 
+/*dopamine text transition*/ 
 .dopa {
     position: absolute;
     top: 40%;
@@ -88,6 +94,7 @@ body {
 }
 
 
+/*yellow box container*/ 
 .content-wrapper {
     display: grid;
     grid-template-columns: 2fr 0.8fr 0.5fr;  
@@ -106,6 +113,7 @@ body {
     padding-left: 100px;
 }
 
+/*text*/ 
 .left-content h2 {
     font-size: 2.7rem; 
     line-height: 1.1;
@@ -121,7 +129,7 @@ body {
 }
 
 
-
+/*Start and How It Works buttons and animation/styling*/ 
 .menu-btn {
     background-color: var(--hover-color); 
     color: black; 
@@ -157,6 +165,7 @@ body {
     transform: translateY(0) scale(0.98); 
 }
 
+/*button icon */ 
 .icon {
     position: absolute;
     left: 10px;        
@@ -167,6 +176,7 @@ body {
     pointer-events: none; 
 }
 
+/*image slide animation */ 
 @keyframes floatSideToSide {
     0% {
         transform: translate(-50%, -50%) translateX(-20px);
@@ -178,7 +188,7 @@ body {
         transform: translate(-50%, -50%) translateX(-20px);
     }
 }
-
+/*image*/ 
 .main-mind {
     position: absolute;
     left: 80%;
