@@ -1,91 +1,490 @@
 <!DOCTYPE html>
-
-<html>
-    <head>
-        <title>RECEIPT PAGE</title>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Dopamine Receipt · Your Order Summary</title>
     <style>
-        body {
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* https://i.postimg.cc/6pgBrsp3/Screenshot-2026-04-04-at-3-17-48-PM.png */
+        body {
+            background: url(https://i.postimg.cc/y8cd4jwh/Screenshot-2026-04-13-at-9-51-14-PM.png) no-repeat center center fixed;
+            background-size: cover;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: white;
-            font-family: cursive;
+            justify-content: center;
+            font-family: 'Quicksand', 'Segoe UI', 'Cursive', system-ui, sans-serif;
+            padding: 20px;
         }
-        
-        h1 {
+
+        /* Main Title */
+        .receipt-title {
             text-align: center;
-            margin-top: 20px;
             margin-bottom: 20px;
+            width: 100%;
+            max-width: 550px;
         }
-        
-        .border {
-            width: 500px;
-            height: 500px;
-            background-color: lavenderblush;
-            padding: 30px;
+        .receipt-title h1 {
+            font-size: clamp(1.4rem, 6vw, 2.2rem);
+            background: linear-gradient(135deg, #FFF8F0, #FFE8DC);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: #6B8FBB;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            letter-spacing: 2px;
+            word-break: keep-all;
+        }
+
+
+        .receipt-glass {
+            width: 100%;
+            max-width: 560px;
+            height: 95vh;
+            max-height: 650px;
+            background: transparent;
+            border-radius: 32px;
+            padding: 1.5rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.2s;
+            background-color: #f4efe4;
+        }
+
+        /* Receipt Header */
+        .receipt-header {
+            text-align: center;
+            border-bottom: 2px dashed #21719f;
+            padding-bottom: 12px;
+            margin-bottom: 18px;
+        }
+        .receipt-header h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFF0E4, #FFDCC8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+        .receipt-header h1 {
+            font-size: clamp(1.4rem, 6vw, 2.2rem);
+            background: linear-gradient(135deg, #FFF8F0, #FFE8DC);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: #6B8FBB;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            letter-spacing: 2px;
+            word-break: keep-all;
+        }
+        .receipt-header p {
+            font-size: 0.75rem;
+            color: #6B8FBB;
+            background: transparent;
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 40px;
+            margin-top: 8px;
+        }
+
+        /* Scrollable Content */
+        .receipt-scroll {
+            flex: 1;
             overflow-y: auto;
-            overflow-x: hidden;
+            overflow-x: auto;
+            padding-right: 6px;
+            margin-bottom: 16px;
+        }
+
+        /* Custom Scrollbar */
+        .receipt-scroll::-webkit-scrollbar {
+            width: 7px;
+            height: 7px;
+        }
+        .receipt-scroll::-webkit-scrollbar-track {
+            background: #b3ccdb;
             border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(222, 93, 131, 0.2);
-            margin-bottom: 20px;
         }
-        
-        .border::-webkit-scrollbar {
-            width: 8px;
+        .receipt-scroll::-webkit-scrollbar-thumb {
+            background: #3c8dbc;
+            border-radius: 20px;
         }
-        
-        .border::-webkit-scrollbar-track {
-            background: lavenderblush;
-            border-radius: 10px;
+        .receipt-scroll::-webkit-scrollbar-thumb:hover {
+            background: #21719f;
         }
-        
-        .border::-webkit-scrollbar-thumb {
-            background: lavender;
-            border-radius: 10px;
+
+        /* Category Sections inside Receipt */
+        .receipt-category {
+            margin-bottom: 24px;
+            border-radius: 20px;
+            background: transparent;
+            padding: 12px 14px;
         }
-        
-        .back-button {
-            background-color: lavenderblush;
-            color: black;
-            padding: 10px 25px;
-            font-size: 16px;
-            font-family: cursive;
+        .cat-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 5px solid;
+            padding-left: 12px;
+            margin-bottom: 12px;
+        }
+        .cat-header h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        .cat-badge {
+            font-size: 0.7rem;
+            background: rgba(0,0,0,0.1);
+            padding: 2px 8px;
+            border-radius: 40px;
+        }
+
+        /* Individual Item Row */
+        .receipt-item {
+            background: transparent;
+            border-radius: 16px;
+            padding: 10px 14px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            transition: 0.2s;
+        }
+        .item-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .item-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #2C241E;
+        }
+        .item-meta {
+            display: flex;
+            gap: 12px;
+            font-size: 0.7rem;
+            color: #7A5A48;
+        }
+        .star-earned {
+            background: #FFE0B5;
+            border-radius: 20px;
+            padding: 2px 8px;
+            font-weight: 600;
+            font-size: 0.7rem;
+        }
+        .delete-item-btn {
+            background: rgba(220, 180, 150, 0.5);
             border: none;
-            border-radius: 25px;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(222, 93, 131, 0.2);
+            width: 32px;
+            height: 32px;
+            border-radius: 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #5C3E2E;
+            transition: 0.2s;
         }
-        
-        .back-button:hover {
-            background-color: pink;
-            transform: scale(1.05);
+        .delete-item-btn:hover {
+            background: #e8b698;
+            transform: scale(1.02);
         }
-        
-        .back-button:active {
-            transform: scale(0.95);
+
+        /* Empty State */
+        .empty-receipt {
+            text-align: center;
+            padding: 2rem;
+            background: transparent;
+            border-radius: 28px;
+            color: #5A4032;
+        }
+
+        /* Footer + Back Button */
+        .receipt-footer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            border-top: 1px solid rgba(255, 225, 210, 0.6);
+            padding-top: 16px;
+        }
+        .back-btn {
+            background: rgba(245, 220, 200, 0.8);
+            backdrop-filter: blur(4px);
+            border: none;
+            padding: 10px 32px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: #3E2C24;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .back-btn:hover {
+            background: #ffe0d0;
+            transform: scale(1.02);
+        }
+        .clear-receipt {
+            background: rgba(200, 170, 150, 0.6);
+        }
+        .clear-receipt:hover {
+            background: #dbbca4;
+        }
+
+        /* Responsive */
+        @media (max-width: 550px) {
+            .receipt-glass {
+                padding: 1rem;
+            }
+            .receipt-header h2 {
+                font-size: 1.3rem;
+            }
+            .item-name {
+                font-size: 0.85rem;
+            }
         }
     </style>
-    
-    <body>
-        <h1>‧₊˚❀༉‧₊˚.RECEIPT‧₊˚❀༉‧₊˚.</h1>
-        <div class="border">
-            <!--write all the stuff here -->
-            <p> where the tasks are </p>
-        </div>
-        
-        <!-- Back Button -->
-        <button class="back-button" onclick="goBack()">←❀</button>
-        
-        <script>
-            function goBack() {
-                window.location.href = "main-page.html";
-            }
-        </script>
-    </body>
-</html>
+</head>
+<body>
 
-<!--this is a comment-->
+<div class="receipt-title">
+    <h1>⏔⏔⏔⏔⏔ ꒰ ᧔ෆ᧓ ꒱ ⏔⏔⏔⏔⏔</h1>
+</div>
+
+<div class="receipt-glass">
+    <div class="receipt-header">
+        <h1>‧₊˚❀༉‧₊˚. RECEIPT ‧₊˚❀༉‧₊˚.</h1>
+        <p>thank you for ordering</p>
+    </div>
+
+    <div class="receipt-scroll" id="receiptScroll">
+        <!-- dynamic receipt content injected here -->
+        <div id="receiptDynamicContent">
+            <div class="empty-receipt">⟡ no orders yet ⟡</div>
+        </div>
+    </div>
+
+    <div class="receipt-footer">
+        <button class="back-btn" id="goBackBtn"> ←❀ back </button>
+        <button class="back-btn clear-receipt" id="clearReceiptBtn"> clear ✄ </button>
+    </div>
+</div>
+
+<script>
+    // ======================== CONFIGURATION ========================
+    // Same localStorage keys as your menu script
+    const RECEIPT_KEY = "dm_receipt";    // where menu saves ordered items
+    const STARS_KEY   = "dm_stars";      // total stars (shared)
+    const ITEMS_KEY   = "dm_items";      // menu items (for reference)
+    
+    // Category color mapping (matching your CATEGORIES object)
+    const CAT_COLORS = {
+        entree:  { accent: "#21719f", name: "Entree", emoji: "☁" },
+        mains:   { accent: "#4169E1", name: "Mains",  emoji: "☀" },
+        dessert: { accent: "#006994", name: "Dessert",emoji: "☾" },
+        specials:{ accent: "#7a6aaa", name: "Specials",emoji: "✮" }
+    };
+    
+    // Helper: load receipt from localStorage
+    function loadReceipt() {
+        const stored = localStorage.getItem(RECEIPT_KEY);
+        if (!stored) return [];
+        try {
+            return JSON.parse(stored);
+        } catch(e) {
+            return [];
+        }
+    }
+    
+    // Helper: save receipt array
+    function saveReceipt(receiptArray) {
+        localStorage.setItem(RECEIPT_KEY, JSON.stringify(receiptArray));
+    }
+    
+    // Helper: update total stars display (mirror menu page)
+    function updateStarCountDisplay() {
+        const stars = localStorage.getItem(STARS_KEY);
+        const starCount = stars ? parseInt(stars) : 0;
+        const starPill = document.getElementById("stars-pill");
+        if (starPill) starPill.textContent = starCount === 1 ? "1 star collected" : `${starCount} stars collected`;
+    }
+    
+    // Render receipt grouped by category
+    function renderReceipt() {
+        const container = document.getElementById("receiptDynamicContent");
+        if (!container) return;
+        
+        const receiptData = loadReceipt();
+        
+        if (!receiptData.length) {
+            container.innerHTML = `<div class="empty-receipt">
+                ⊹˚₊𓌉◯𓇋₊˚⊹<br>
+                ⟡ no orders yet ⟡
+            </div>`;
+            updateStarCountDisplay();
+            return;
+        }
+        
+        // Group items by category
+        const grouped = {
+            entree: [],
+            mains: [],
+            dessert: [],
+            specials: []
+        };
+        
+        receiptData.forEach(item => {
+            const cat = item.category || "entree";
+            if (grouped[cat]) grouped[cat].push(item);
+            else grouped.entree.push(item);
+        });
+        
+        let html = '';
+        
+        // Render each category that has items
+        for (const [catId, items] of Object.entries(grouped)) {
+            if (items.length === 0) continue;
+            
+            const catInfo = CAT_COLORS[catId] || CAT_COLORS.entree;
+            const borderColor = catInfo.accent;
+            
+            html += `
+                <div class="receipt-category" style="border-left: 3px solid ${borderColor}40;">
+                    <div class="cat-header" style="border-left-color: ${borderColor}">
+                        <h3 style="color: ${borderColor}">${catInfo.emoji} ${catInfo.name}</h3>
+                        <span class="cat-badge" style="background: ${borderColor}20">${items.length} item${items.length !== 1 ? 's' : ''}</span>
+                    </div>
+            `;
+            
+            items.forEach((item, idx) => {
+                const uniqueId = item.id || `${catId}-${idx}-${Date.now()}`;
+                const starsEarned = item.stars || (catId === 'mains' ? 3 : catId === 'dessert' ? 2 : catId === 'specials' ? 4 : 1);
+                const activityName = item.activity || "mystery treat";
+                const timestamp = item.time ? new Date(item.time).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}) : '';
+                
+                html += `
+                    <div class="receipt-item" data-item-id="${uniqueId}" data-category="${catId}">
+                        <div class="item-info">
+                            <div class="item-name">𝜗𝜚 ${escapeHtml(activityName)}</div>
+                            <div class="item-meta">
+                                <span class="star-earned" style="background: ${borderColor}30"> ✶ ${starsEarned} stars</span>
+                                ${timestamp ? `<span> ${timestamp}</span>` : ''}
+                            </div>
+                        </div>
+                        <button class="delete-item-btn" data-id="${uniqueId}" data-cat="${catId}" data-name="${escapeHtml(activityName)}">✕</button>
+                    </div>
+                `;
+            });
+            
+            html += `</div>`;
+        }
+        
+        container.innerHTML = html;
+        
+        // attach delete events to each delete button
+        document.querySelectorAll('.delete-item-btn').forEach(btn => {
+            btn.removeEventListener('click', handleDeleteClick);
+            btn.addEventListener('click', handleDeleteClick);
+        });
+        
+        updateStarCountDisplay();
+    }
+    
+    // Delete handler: removes specific item from receipt and updates stars
+    function handleDeleteClick(e) {
+        e.stopPropagation();
+        const btn = e.currentTarget;
+        const itemId = btn.getAttribute('data-id');
+        const category = btn.getAttribute('data-cat');
+        const itemName = btn.getAttribute('data-name');
+        
+        if (!itemId) return;
+        
+        let currentReceipt = loadReceipt();
+        let removedStars = 0;
+        
+        // find the item to get its star value before removal
+        const removedItem = currentReceipt.find(item => item.id == itemId);
+        if (removedItem) {
+            removedStars = removedItem.stars || 1;
+        }
+        
+        // filter out the deleted item
+        const newReceipt = currentReceipt.filter(item => item.id != itemId);
+        saveReceipt(newReceipt);
+        
+        // update total stars in localStorage (subtract the stars from removed item)
+        let currentStars = parseInt(localStorage.getItem(STARS_KEY) || "0");
+        let newStars = Math.max(0, currentStars - removedStars);
+        localStorage.setItem(STARS_KEY, String(newStars));
+        
+        // re-render the receipt
+        renderReceipt();
+        
+        // optional: gentle visual feedback
+        const parentDiv = btn.closest('.receipt-item');
+        if (parentDiv) {
+            parentDiv.style.opacity = '0.5';
+            setTimeout(() => {
+                if (parentDiv) parentDiv.style.opacity = '';
+            }, 200);
+        }
+    }
+    
+    // Clear entire receipt (with confirmation)
+    function clearAllReceipt() {
+        const confirmed = confirm("Are you sure? This will reset your stars.");
+        if (!confirmed) return;
+        
+        localStorage.setItem(RECEIPT_KEY, JSON.stringify([]));
+        localStorage.setItem(STARS_KEY, "0");
+        renderReceipt();
+    }
+    
+    // Helper to escape HTML
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    }
+    
+    // Navigation back to create-menu (or menu page)
+    function goBackToMenu() {
+        window.location.href = "create-menu.html";
+    }
+    
+    // Listen for storage changes from other tabs (real-time sync)
+    window.addEventListener('storage', (event) => {
+        if (event.key === RECEIPT_KEY || event.key === STARS_KEY) {
+            renderReceipt();
+        }
+    });
+    
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        renderReceipt();
+        
+        const backBtn = document.getElementById('goBackBtn');
+        if (backBtn) backBtn.addEventListener('click', goBackToMenu);
+        
+        const clearBtn = document.getElementById('clearReceiptBtn');
+        if (clearBtn) clearBtn.addEventListener('click', clearAllReceipt);
+    });
+</script>
+</body>
+</html>
