@@ -72,7 +72,8 @@
 ================================ */
 .book-outer {
   width: 100%;
-  max-width: 700px;
+  height: 100%;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
 }
@@ -130,7 +131,7 @@
   border-radius: 0 14px 14px 14px;
   background: #fefcf4;
   box-shadow: 3px 5px 24px rgba(0,0,0,0.16);
-  height: 420px;
+  height: 620px;
   overflow: hidden;
 }
 
@@ -153,7 +154,7 @@
 .ring {
   width: 9px;
   height: 9px;
-  border-radius: 50%;
+  border-radius: 60%;
   border: 2.5px solid #b88820;
   background: #fefcf4;
 }
@@ -177,7 +178,7 @@
 
 .menu-title {
   font-family: 'Fredoka One', cursive;
-  font-size: 26px;
+  font-size: 30px;
   line-height: 1.15;
   color: #5a90c8;
   text-shadow: 2px 2px 0 #fff, 3px 3px 0 rgba(90,140,200,0.18);
@@ -185,7 +186,7 @@
 }
 
 .menu-tagline {
-  font-size: 9px;
+  font-size: 11px;
   color: #9aabb8;
   letter-spacing: 1.5px;
   font-style: italic;
@@ -224,8 +225,8 @@
   background: none;
   border: 1.5px dashed #b8c8d8;
   border-radius: 8px;
-  padding: 7px 10px;
-  font-size: 10px;
+  padding: 7px 12px;
+  font-size: 12px;
   color: #7a9ab8;
   cursor: pointer;
   font-family: 'Nunito', sans-serif;
@@ -291,19 +292,33 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: 30px;
   flex-shrink: 0;
+}
+
+.pg-labell {
+  font-family: 'Fredoka One', cursive;
+  font-size: 30px;
+  line-height: 1;
+  text-shadow: 1px 1px 0 #4d96d5c6, 3px 3px 0 #79aef4, 3.5px 3.5px 0 rgb(255, 255, 255);
 }
 
 .pg-label {
   font-family: 'Fredoka One', cursive;
   font-size: 30px;
   line-height: 1;
-  text-shadow: 2px 2px 0 #fff, 3px 3px 0 rgba(0,0,0,0.06);
+  text-shadow: 3px 3px 0 #ffffff, 3.2px 3.2px 0 rgba(0, 0, 0, 0.573);
+}
+
+.pg-label3 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 30px;
+  line-height: 1;
+  text-shadow: 3px 3px 0 #ffffff, 3.2px 3.2px 0 rgba(0, 0, 0, 0.573);
 }
 
 .pg-sub {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1.5px;
   font-style: italic;
   margin-top: 4px;
