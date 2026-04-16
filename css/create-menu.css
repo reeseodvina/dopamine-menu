@@ -292,19 +292,33 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: 30px;
   flex-shrink: 0;
+}
+
+.pg-labell {
+  font-family: 'Fredoka One', cursive;
+  font-size: 30px;
+  line-height: 1;
+  text-shadow: 1px 1px 0 #4d96d5c6, 3px 3px 0 #79aef4, 3.5px 3.5px 0 rgb(255, 255, 255);
 }
 
 .pg-label {
   font-family: 'Fredoka One', cursive;
   font-size: 30px;
   line-height: 1;
-  text-shadow: 2px 2px 0 #fff, 3px 3px 0 rgba(0,0,0,0.06);
+  text-shadow: 3px 3px 0 #ffffff, 3.2px 3.2px 0 rgba(0, 0, 0, 0.573);
+}
+
+.pg-label3 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 30px;
+  line-height: 1;
+  text-shadow: 3px 3px 0 #ffffff, 3.2px 3.2px 0 rgba(0, 0, 0, 0.573);
 }
 
 .pg-sub {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1.5px;
   font-style: italic;
   margin-top: 4px;
