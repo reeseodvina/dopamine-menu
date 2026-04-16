@@ -12,16 +12,34 @@
         }
         /* https://i.postimg.cc/6pgBrsp3/Screenshot-2026-04-04-at-3-17-48-PM.png */
         body {
-            background: url(https://i.postimg.cc/y8cd4jwh/Screenshot-2026-04-13-at-9-51-14-PM.png) no-repeat center center fixed;
-            background-size: cover;
             min-height: 100vh;
+            background-color: #b8d0e8;
+            background-image:
+            repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,0.42) 0px, rgba(255,255,255,0.42) 22px,
+            transparent 22px, transparent 44px),
+            repeating-linear-gradient(
+                90deg,
+            rgba(255,255,255,0.42) 0px, rgba(255,255,255,0.42) 22px,
+                transparent 22px, transparent 44px),
+            repeating-linear-gradient(
+            0deg,
+            rgba(148,190,224,0.26) 0px, rgba(148,190,224,0.26) 11px,
+            transparent 11px, transparent 44px
+            ),
+            repeating-linear-gradient(
+            90deg,
+            rgba(148,190,224,0.26) 0px, rgba(148,190,224,0.26) 11px,
+            transparent 11px, transparent 44px
+            );
+            padding: 28px 14px 48px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            font-family: 'Quicksand', 'Segoe UI', 'Cursive', system-ui, sans-serif;
-            padding: 20px;
+            font-family: 'Nunito', sans-serif;
         }
+
 
         /* Main Title */
         .receipt-title {
@@ -183,7 +201,7 @@
             font-size: 0.7rem;
         }
         .delete-item-btn {
-            background: rgba(220, 180, 150, 0.5);
+            background: #FFEA94;
             border: none;
             width: 32px;
             height: 32px;
@@ -216,7 +234,7 @@
             padding-top: 16px;
         }
         .back-btn {
-            background: rgba(245, 220, 200, 0.8);
+            background: #FFEA94;
             backdrop-filter: blur(4px);
             border: none;
             padding: 10px 32px;
@@ -224,7 +242,7 @@
             font-weight: 700;
             font-family: inherit;
             font-size: 0.95rem;
-            color: #3E2C24;
+            color: #21719f;
             cursor: pointer;
             transition: 0.2s;
             display: inline-flex;
@@ -236,7 +254,7 @@
             transform: scale(1.02);
         }
         .clear-receipt {
-            background: rgba(200, 170, 150, 0.6);
+            background: #FFEA94;
         }
         .clear-receipt:hover {
             background: #dbbca4;
