@@ -483,7 +483,9 @@
     }
     
     // Navigation back to create-menu (or menu page)
-       
+    function goBackToMenu() {
+        window.location.href = "create-menu.html";
+    }   
     
     // Listen for storage changes from other tabs (real-time sync)
     window.addEventListener('storage', (event) => {
