@@ -1,0 +1,323 @@
+:root {
+
+--bg-color: #FBF9EA;
+
+--text-color: #6B8FBB;
+
+--header-color: #81A5D0;
+
+--hover-color: #B8D8F9;
+
+--btn-color: #FADE1D;
+
+--cont-color: #fbebac;
+
+}
+
+
+
+* {
+
+margin: 0;
+
+padding: 0;
+
+}
+
+
+
+body {
+
+font-family: 'Fredoka One', sans-serif;
+
+background-color: var(--bg-color);
+
+color: var(--text-color);
+
+overflow-x: hidden;
+
+}
+
+
+
+/* Logo styling */
+
+.logo {
+
+font-weight: 700;
+
+letter-spacing: 2px;
+
+font-size: 25px;
+
+display: flex;
+
+align-items: center;
+
+gap: 10px;
+
+padding: 20px;
+
+}
+
+
+
+.logo-img {
+
+width: 100px;
+
+height: auto;
+
+}
+
+
+
+/* Hero section: Side-by-side layout */
+
+.hero {
+
+display: flex;
+
+flex-direction: row;
+
+align-items: center;
+
+justify-content: space-between;
+
+padding: 0 80px;
+
+height: calc(100vh - 150px);
+
+gap: 60px;
+
+}
+
+
+
+/* Left side header */
+
+/* Update the container to stack items vertically */
+
+/* 1. Ensure the parent container is set to relative */
+
+.header-container {
+
+position: relative;
+
+height: 80vh; /* Give the container a set height to work within */
+
+}
+
+
+
+/* 2. Position everything absolutely */
+
+.dopa {
+
+position: absolute;
+
+top: 0;
+
+left: 0;
+
+font-size: 5vw;
+
+font-weight: 900;
+
+color: #B8D8F9;
+
+line-height: 1.1;
+
+text-shadow: 2px 2px 0 #fff, 3px 3px 0 rgba(90,140,200,0.18);
+
+width:90%;
+
+white-space: nowrap;
+
+}
+
+
+
+.slogan {
+
+margin-top:100px;
+
+font-size: 20px;
+
+color: var(--btn-color);
+
+text-shadow: 2px 2px 0 #fff, 3px 3px 0 rgba(90,140,200,0.18);
+
+line-height:1.1;
+
+width: auto;
+
+}
+
+
+
+.top-img {
+
+position: absolute;
+
+top: 200px; /* Adjust this value to move it independently */
+
+left: 0;
+
+width: 650px;
+
+height: 400px;
+
+}
+
+/* Right side yellow container */
+
+.content-wrapper {
+
+flex: 1;
+
+background-color: var(--header-color);
+
+border-radius: 40px;
+
+padding: 60px 50px;
+
+max-width: 600px;
+
+margin-top:100px;
+
+}
+
+
+
+.left-content h2 {
+
+font-size: 2rem;
+
+line-height: 1.1;
+
+margin-bottom: 10px;
+
+color:var(--cont-color);
+
+}
+
+
+
+.left-content p {
+
+font-size: 1.2rem;
+
+line-height: 1.4;
+
+margin-bottom: 20px;
+
+opacity: 1;
+
+color: var(--bg-color);
+
+font-weight: 600;
+
+}
+
+
+
+/* Buttons and spacing */
+
+.button-group {
+
+display: flex;
+
+gap: 20px;
+
+margin-top: 30px;
+
+}
+
+
+
+.menu-btn {
+
+background-color: var(--hover-color);
+
+color: #3f556f;
+
+border-radius: 50px;
+
+border: 3px solid var(--btn-color);
+
+cursor: pointer;
+
+font-size: 1.5rem;
+
+font-weight: 700;
+
+font-family: "Sour Gummy", sans-serif;
+
+transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+box-shadow: 0 4px 15px rgba(250, 222, 29, 0.3);
+
+position: relative;
+
+width: 250px;
+
+height: 80px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+}
+
+
+
+.btn-text {
+
+margin-left: 40px;
+
+}
+
+
+
+.menu-btn:hover {
+
+transform: translateY(-5px) scale(1.05);
+
+background-color: var(--cont-color);
+
+border-color: var(--btn-color);
+
+box-shadow: 0 10px 25px rgba(250, 222, 29, 0.5);
+
+}
+
+
+
+.icon {
+
+position: absolute;
+
+left: 15px;
+
+width: 40px;
+
+}
+
+
+.content-wrapper2 {
+    flex: 1;
+    background-color: var(--header-color);
+    border-radius: 40px;
+    padding: 60px 50px;
+    max-width: 600px;
+    position: absolute;
+    top: 750px; 
+    left: 0;
+    color:#FBF9EA;
+    line-height: 1.3;
+    font-size:20px;
+    margin-left:50px;
+}
