@@ -185,7 +185,7 @@
         .item-name {
             font-weight: 700;
             font-size: 0.95rem;
-            color: #2C241E;
+            color: #1b164d;
         }
         .item-meta {
             display: flex;
@@ -194,11 +194,12 @@
             color: #7A5A48;
         }
         .star-earned {
-            background: #FFE0B5;
+            background: #e3dc88;
             border-radius: 20px;
             padding: 2px 8px;
             font-weight: 600;
             font-size: 0.7rem;
+            color: rgb(255, 255, 136);
         }
         .delete-item-btn {
             background: #FFEA94;
@@ -208,11 +209,11 @@
             border-radius: 40px;
             font-size: 1.2rem;
             cursor: pointer;
-            color: #5C3E2E;
+            color: #2e3e5c;
             transition: 0.2s;
         }
         .delete-item-btn:hover {
-            background: #e8b698;
+            background: #5ab4d4;
             transform: scale(1.02);
         }
 
@@ -482,9 +483,7 @@
     }
     
     // Navigation back to create-menu (or menu page)
-    function goBackToMenu() {
-        window.location.href = "create-menu.html";
-    }
+       
     
     // Listen for storage changes from other tabs (real-time sync)
     window.addEventListener('storage', (event) => {
