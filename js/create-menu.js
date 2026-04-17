@@ -1,22 +1,22 @@
 const CATEGORIES = {
   entree: {
-    accent: "#e8a020",
+    accent: "#6B8FBB",
     tape: "#a8c8e8",
     stars: 1,
   },
   mains: {
-    accent: "#4a9a5a",
+    accent: "#6B8FBB",
     tape: "#f5d9b8",
     stars: 3,
   },
   dessert: {
-    accent: "#c85a8a",
-    tape: "#f0c8d8",
+    accent: "#6B8FBB",
+    tape: "#e9f0d0",
     stars: 2,
   },
   specials: {
-    accent: "#7a6aaa",
-    tape: "#d8d0f0",
+    accent: "#f8eb84",
+    tape: "#edfbbc",
     stars: 4,
   },
 };
