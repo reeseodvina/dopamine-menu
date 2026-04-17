@@ -17,8 +17,9 @@
 body {
     font-family: 'Fredoka One', sans-serif;
     background-color: var(--bg-color);
-    color: black;
+    color: #6e8eb6;
     overflow-x: hidden;
+    
 }
 
 /*sun logo*/ 
@@ -119,6 +120,7 @@ body {
     line-height: 1.1;
     margin-bottom: 30px; 
     max-width: 90%; 
+    text-shadow: 2px 2px 0 #ffffff, 2.5px 2.5px 0 rgba(0, 0, 0, 0.573);
 }
 
 .left-content p {
@@ -132,7 +134,7 @@ body {
 /*Start and How It Works buttons and animation/styling*/ 
 .menu-btn {
     background-color: var(--hover-color); 
-    color: black; 
+    color: #3f556f; 
     border-radius: 50px;
     
     
@@ -141,7 +143,7 @@ body {
     cursor: pointer;
     font-size: 1.8rem;
     font-weight: 700;
-    font-family: "Sour Gummy", sans-serif;
+    font-family: "sour gummy", sans-serif;
     letter-spacing: 1px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     box-shadow: 0 4px 15px rgba(250, 222, 29, 0.3); 
